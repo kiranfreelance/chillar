@@ -9,10 +9,9 @@ const MobileLogin = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (uName === 'Ankani' && password === '9025') {
+        if (uName === 'Ankani' && password === '902571') {
             navigate('/dashboard')
         }
-        // Add login logic here
     };
 
     return (
