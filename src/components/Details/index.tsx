@@ -60,10 +60,10 @@ const CourseDetail: React.FC = () => {
         "lessons"
       );
       await addDoc(lessonsRef, {
-        title: "Subscription2",
-        status: "debited",
+        title: "As of 23 Jun",
+        status: "credited",
         date: "23-06-2025",
-        amount: "500",
+        amount: "1537954",
         backgroundColor: "#07ec8b",
       });
       await fetchLessonsForTransaction();
@@ -91,7 +91,7 @@ const CourseDetail: React.FC = () => {
       <div className="progress-section">
         {/* <div className="progress-circle">56%</div> */}
       </div>
-      {/* <button onClick={() => addTransactionRecord()}>Add record</button> */}
+      <button onClick={() => addTransactionRecord()}>Add record</button>
       {bankTransactions.length === 0 && <p className="no-cash">No Cash Available</p>}
 
       <div className="lesson-list">
