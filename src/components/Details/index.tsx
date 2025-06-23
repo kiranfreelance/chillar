@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./style.css";
+import { formatINRCurrency } from "../../utils";
 
 
 interface Lesson {
@@ -63,7 +64,7 @@ const CourseDetail: React.FC = () => {
         title: "As of 23 Jun",
         status: "credited",
         date: "23-06-2025",
-        amount: "1537954",
+        amount: "51000",
         backgroundColor: "#07ec8b",
       });
       await fetchLessonsForTransaction();
@@ -83,15 +84,15 @@ const CourseDetail: React.FC = () => {
       <div className="header">
         <div>
           <h3>UBIN</h3>
-          <small>₹{currTotal}</small>
+          <small>{formatINRCurrency(currTotal)}</small>
         </div>
-        <div onClick={() => navigate("/")}>⬅</div>
+        <div onClick={() => navigate("/dashboard")}>⬅</div>
       </div>
 
       <div className="progress-section">
         {/* <div className="progress-circle">56%</div> */}
       </div>
-      <button onClick={() => addTransactionRecord()}>Add record</button>
+      {/* <button onClick={() => addTransactionRecord()}>Add record</button> */}
       {bankTransactions.length === 0 && <p className="no-cash">No Cash Available</p>}
 
       <div className="lesson-list">
@@ -108,8 +109,8 @@ const CourseDetail: React.FC = () => {
               </div>
             </div>
             <div className="play-icon">
-              <span>₹{transaction?.amount}</span>
-              <span className="upto-date">₹{transaction?.tillDateBalance}</span>
+              <span>{formatINRCurrency(transaction?.amount)}</span>
+              <span className="upto-date">{formatINRCurrency(transaction?.tillDateBalance)}</span>
             </div>
 
           </div>

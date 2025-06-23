@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./style.css";
+import { formatINRCurrency } from "../../utils";
 
 interface CourseItem {
   bank: string;
@@ -161,7 +162,7 @@ const Dashboard: React.FC = () => {
       <div className="top-bar">
         <div className="top-bar-header">
           <span>&#9776;</span>
-          <span>₹{currTotal}</span>
+          <span>{formatINRCurrency(currTotal)}</span>
           <span>&#128100;</span>
         </div>
         <input type="text" placeholder="Search..." />
@@ -174,7 +175,7 @@ const Dashboard: React.FC = () => {
               <div className="overlay"></div>
               <div className="row">
                 <div className="label">{item?.name}</div>
-                <div className="amount label">₹{item?.amount}</div>
+                <div className="amount label">{formatINRCurrency(item?.amount)}</div>
               </div>
               <div className="row">
                 <div>{item?.date}</div>
