@@ -51,33 +51,36 @@ const CourseDetail: React.FC = () => {
     fetchLessonsForTransaction()
   }, [])
 
-  const addTransactionRecord = async () => {
-    try {
-      // @ts-ignore
-      const lessonsRef = collection(
-        db,
-        "transactions",
-        params?.id,
-        "lessons"
-      );
-      await addDoc(lessonsRef, {
-        title: "As of 23 Jun",
-        status: "credited",
-        date: "23-06-2025",
-        amount: "51000",
-        backgroundColor: "#07ec8b",
-      });
-      await fetchLessonsForTransaction();
-      // await addDoc(collection(db, "transactions"), {
-      //   bank: "Aadhi",
-      //   amount: "0",
-      //   date: "23/06/2025",
-      //   type: "credited",
-      // });
-    } catch (error) {
-      console.error("Error adding lesson:", error);
-    }
-  }
+  // const addTransactionRecord = async () => {
+  //   try {
+  //     // @ts-ignore
+  //     const lessonsRef = collection(
+  //       db,
+  //       "transactions",
+  //       params?.id,
+  //       "lessons"
+  //     );
+  //     await addDoc(lessonsRef, {
+  //       title: "As of 23 Jun",
+  //       status: "credited",
+  //       date: "23-06-2025",
+  //       amount: "51000",
+  //       backgroundColor: "#07ec8b",
+  //     });
+  //     await fetchLessonsForTransaction();
+  //     // await addDoc(collection(db, "transactions"), {
+  //     //   bank: "Aadhi",
+  //     //   amount: "0",
+  //     //   date: "23/06/2025",
+  //     //   type: "credited",
+  //     // });
+  //   } catch (error) {
+  //     console.error("Error adding lesson:", error);
+  //   }
+  // }
+  const addNewTransaction = () => {
+    navigate(`/transaction/${params?.id}`);
+  };
 
   return (
     <div className="course-screen">
@@ -88,7 +91,7 @@ const CourseDetail: React.FC = () => {
         </div>
         <div onClick={() => navigate("/dashboard")}>⬅</div>
       </div>
-
+      <button className="fab-button" onClick={() => addNewTransaction()}>+</button>
       <div className="progress-section">
         {/* <div className="progress-circle">56%</div> */}
       </div>

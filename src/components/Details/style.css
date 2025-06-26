@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -8,12 +8,14 @@ body {
   font-family: Arial, sans-serif;
   background: #fff;
   color: #000;
-}
+} */
 
 .course-screen {
   height: 100vh;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .header {
@@ -117,4 +119,28 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #6200ea;
+  color: white;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.fab-button:hover {
+  background-color: #3700b3;
 }
