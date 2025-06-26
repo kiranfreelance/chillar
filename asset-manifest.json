@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chillar/static/css/main.cc21035f.css",
+    "main.js": "/chillar/static/js/main.84d32c56.js",
+    "static/js/453.96453769.chunk.js": "/chillar/static/js/453.96453769.chunk.js",
+    "index.html": "/chillar/index.html",
+    "main.cc21035f.css.map": "/chillar/static/css/main.cc21035f.css.map",
+    "main.84d32c56.js.map": "/chillar/static/js/main.84d32c56.js.map",
+    "453.96453769.chunk.js.map": "/chillar/static/js/453.96453769.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc21035f.css",
+    "static/js/main.84d32c56.js"
+  ]
+}
